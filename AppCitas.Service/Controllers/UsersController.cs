@@ -1,5 +1,6 @@
 ﻿using AppCitas.Service.Data;
 using AppCitas.Service.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -18,11 +19,13 @@ public class UsersController : ControllerBase
 		_context = context;
 	}
 	[HttpGet]
+	[AllowAnonymous]
 	public async Task<ActionResult<IEnumerable<AppUser>>> GetUsers()
 	{
 		return await _context.Users.ToListAsync(); 
 	}
 	[HttpGet("{id}")]
+	[Authorize]
     public async Task<ActionResult<AppUser>> GetUsersById(int id)
     {
         
