@@ -30,6 +30,7 @@ public class BuggyController : BaseApiController
     [HttpGet("server-error")]
     public ActionResult<string> GetSeerverError()
     {
+
         var thing = _context.Users.Find(-1);
         var thingToReturn= thing.ToString();
         return thingToReturn;
