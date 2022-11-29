@@ -10,7 +10,7 @@ public static class AplicationServicesExtensions
     public static IServiceCollection AddAplicationServices(this IServiceCollection services, IConfiguration config)
     {
         services.AddScoped<ITokenServices, tokenService>();
-
+        services.AddScoped<IUserRepository, UserRepository>();
         services.AddDbContext<DataContext>(options =>
         {
             options.UseSqlite(config.GetConnectionString("DefaultConnection"));

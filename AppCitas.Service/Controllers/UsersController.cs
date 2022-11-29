@@ -4,13 +4,11 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using SQLitePCL;
+
 
 namespace AppCitas.Service.Controllers;
-
-[Route("api/[controller]")]
-[ApiController]
-public class UsersController : ControllerBase
+[Authorize]
+public class UsersController : BaseApiController
 {
 	private readonly DataContext _context;
 
@@ -19,13 +17,13 @@ public class UsersController : ControllerBase
 		_context = context;
 	}
 	[HttpGet]
-	[AllowAnonymous]
+	
 	public async Task<ActionResult<IEnumerable<AppUser>>> GetUsers()
 	{
 		return await _context.Users.ToListAsync(); 
 	}
 	[HttpGet("{id}")]
-	[Authorize]
+	
     public async Task<ActionResult<AppUser>> GetUsersById(int id)
     {
         
