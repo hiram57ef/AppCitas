@@ -1,6 +1,8 @@
 ﻿using AppCitas.Service.Data;
+using AppCitas.Service.DTOs;
 using AppCitas.Service.Entities;
 using AppCitas.Service.interfaces;
+using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -12,23 +14,28 @@ namespace AppCitas.Service.Controllers;
 public class UsersController : BaseApiController
 {
 	private readonly IUserRepository _userRepository;
+    private readonly IMapper _mapper;
 
-    public UsersController(IUserRepository userRepository)
-
+    public UsersController(IUserRepository userRepository, IMapper mapper)
     {
         _userRepository = userRepository;
+        _mapper = mapper;
+
     }
 	[HttpGet]
 	
-	public async Task<ActionResult<IEnumerable<AppUser>>> GetUsers()
+	public async Task<ActionResult<IEnumerable<MemberDto>>> GetUsers()
 	{
-        return Ok(await _userRepository.GetUsersAsync());
+        var user=await _userRepository.GetUsersAsync();
+
+        var usersToReturn = _mapper.Map<IEnumerable<MemberDto>>(user);
+        return Ok(usersToReturn);
 	}
 
     [HttpGet("{username}")]
-    public async Task<ActionResult<AppUser>> GetUsersByUsername(string username)
+    public async Task<ActionResult<MemberDto>> GetUsersByUsername(string username)
     {
-
-        return await _userRepository.GetUserByUsernameAsync(username);
+        var user = await _userRepository.GetUserByUsernameAsync(username);
+        return _mapper.Map<MemberDto>(user);
     }
 }
