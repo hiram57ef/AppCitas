@@ -13,8 +13,8 @@
     "Country": "Somalia",
     "Photos": [
       {
-        "url": "https://randomuser.me/api/portraits/women/9.jpg",
-        "isMain": true
+        "Url": "https://randomuser.me/api/portraits/women/9.jpg",
+        "IsMain": true
       }
     ]
   },
@@ -32,8 +32,8 @@
     "Country": "Sierra Leone",
     "Photos": [
       {
-        "url": "https://randomuser.me/api/portraits/women/30.jpg",
-        "isMain": true
+        "Url": "https://randomuser.me/api/portraits/women/30.jpg",
+        "IsMain": true
       }
     ]
   },
@@ -51,8 +51,8 @@
     "Country": "Liberia",
     "Photos": [
       {
-        "url": "https://randomuser.me/api/portraits/women/30.jpg",
-        "isMain": true
+        "Url": "https://randomuser.me/api/portraits/women/30.jpg",
+        "IsMain": true
       }
     ]
   },
@@ -70,8 +70,8 @@
     "Country": "Haiti",
     "Photos": [
       {
-        "url": "https://randomuser.me/api/portraits/women/32.jpg",
-        "isMain": true
+        "Url": "https://randomuser.me/api/portraits/women/32.jpg",
+        "IsMain": true
       }
     ]
   },
@@ -89,8 +89,8 @@
     "Country": "Peru",
     "Photos": [
       {
-        "url": "https://randomuser.me/api/portraits/women/64.jpg",
-        "isMain": true
+        "Url": "https://randomuser.me/api/portraits/women/64.jpg",
+        "IsMain": true
       }
     ]
   },
@@ -108,8 +108,8 @@
     "Country": "Norfolk Island",
     "Photos": [
       {
-        "url": "https://randomuser.me/api/portraits/men/37.jpg",
-        "isMain": true
+        "Url": "https://randomuser.me/api/portraits/men/37.jpg",
+        "IsMain": true
       }
     ]
   },
@@ -127,8 +127,8 @@
     "Country": "Afghanistan",
     "Photos": [
       {
-        "url": "https://randomuser.me/api/portraits/men/73.jpg",
-        "isMain": true
+        "Url": "https://randomuser.me/api/portraits/men/73.jpg",
+        "IsMain": true
       }
     ]
   },
@@ -146,8 +146,8 @@
     "Country": "Indonesia",
     "Photos": [
       {
-        "url": "https://randomuser.me/api/portraits/men/55.jpg",
-        "isMain": true
+        "Url": "https://randomuser.me/api/portraits/men/55.jpg",
+        "IsMain": true
       }
     ]
   },
@@ -165,8 +165,8 @@
     "Country": "Palau",
     "Photos": [
       {
-        "url": "https://randomuser.me/api/portraits/men/20.jpg",
-        "isMain": true
+        "Url": "https://randomuser.me/api/portraits/men/20.jpg",
+        "IsMain": true
       }
     ]
   },
@@ -184,8 +184,8 @@
     "Country": "Azerbaijan",
     "Photos": [
       {
-        "url": "https://randomuser.me/api/portraits/men/64.jpg",
-        "isMain": true
+        "Url": "https://randomuser.me/api/portraits/men/64.jpg",
+        "IsMain": true
       }
     ]
   }
