@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AppCitas.Service.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20221031132200_LikedEntityAdded")]
+    [Migration("20221130082807_LikedEntityAdded")]
     partial class LikedEntityAdded
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
