@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AppCitas.Service.Helpers;
+using Microsoft.AspNetCore.Mvc;
 
 namespace AppCitas.Service.Controllers;
 
-[Route("api/[controller]")]
+[ServiceFilter(typeof(LogUserActivity))]
 [ApiController]
-public class BaseApiController :ControllerBase
+[Route("api/[controller]")]
+public class BaseApiController : ControllerBase
 {
 }

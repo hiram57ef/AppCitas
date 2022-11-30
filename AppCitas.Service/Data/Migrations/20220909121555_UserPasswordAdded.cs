@@ -1,11 +1,10 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace AppCitas.Service.data.Migrations
+namespace AppCitas.Service.Data.Migrations
 {
-    public partial class initialcreate2 : Migration
+    public partial class UserPasswordAdded : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

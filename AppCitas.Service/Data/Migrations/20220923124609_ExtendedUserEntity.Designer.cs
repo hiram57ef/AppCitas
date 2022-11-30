@@ -8,10 +8,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace AppCitas.Service.data.Migrations
+namespace AppCitas.Service.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20221107024713_ExtendedUserEntity")]
+    [Migration("20220923124609_ExtendedUserEntity")]
     partial class ExtendedUserEntity
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

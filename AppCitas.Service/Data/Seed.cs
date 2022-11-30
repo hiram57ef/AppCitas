@@ -1,9 +1,7 @@
 ﻿using System.Security.Cryptography;
 using System.Text;
-using System.Text.Json.Serialization;
 using AppCitas.Service.Entities;
 using Microsoft.EntityFrameworkCore;
-using Newtonsoft.Json;
 
 namespace AppCitas.Service.Data;
 
@@ -15,7 +13,6 @@ public class Seed
 
         var userData = await System.IO.File.ReadAllTextAsync("Data/UserSeedData.json");
         var users = System.Text.Json.JsonSerializer.Deserialize<List<AppUser>>(userData);
-        
 
         foreach (var user in users)
         {

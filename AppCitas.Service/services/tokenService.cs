@@ -1,30 +1,32 @@
-﻿using AppCitas.Service.Entities;
-using AppCitas.Service.interfaces;
-using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
+﻿using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using AppCitas.Service.Entities;
+using AppCitas.Service.Interfaces;
+using Microsoft.IdentityModel.Tokens;
 
+namespace AppCitas.Service.Services;
 
-namespace AppCitas.Service.services;
-
-public class tokenService : ITokenServices
+public class TokenService : ITokenService
 {
     private readonly SymmetricSecurityKey _key;
-    public tokenService(IConfiguration config)
+
+    public TokenService(IConfiguration config)
     {
         _key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["TokenKey"]));
     }
+
     public string CreateToken(AppUser user)
     {
         var claims = new List<Claim>
         {
-            new Claim(JwtRegisteredClaimNames.NameId, user.UserName)
+            new Claim(JwtRegisteredClaimNames.NameId, user.Id.ToString()),
+            new Claim(JwtRegisteredClaimNames.UniqueName, user.UserName)
         };
 
         var creds = new SigningCredentials(_key, SecurityAlgorithms.HmacSha512Signature);
 
-        var tokenDescriptor = new SecurityTokenDescriptor
+        var tokenDescriptor = new SecurityTokenDescriptor()
         {
             Subject = new ClaimsIdentity(claims),
             Expires = DateTime.UtcNow.AddDays(7),

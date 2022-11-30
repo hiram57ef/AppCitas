@@ -1,8 +1,8 @@
 ﻿using AppCitas.Service.Entities;
 
-namespace AppCitas.Service.interfaces;
+namespace AppCitas.Service.Interfaces;
 
-public interface ITokenServices
+public interface ITokenService
 {
     string CreateToken(AppUser user);
 }

@@ -1,7 +1,8 @@
 ﻿using AppCitas.Service.DTOs;
 using AppCitas.Service.Entities;
+using AppCitas.Service.Helpers;
 
-namespace AppCitas.Service.interfaces;
+namespace AppCitas.Service.Interfaces;
 
 public interface IUserRepository
 {
@@ -12,5 +13,5 @@ public interface IUserRepository
     void Update(AppUser user);
 
     Task<MemberDto> GetMemberAsync(string username);
-    Task<IEnumerable<MemberDto>> GetMembersAsync();
+    Task<PagedList<MemberDto>> GetMembersAsync(UserParams userParams);
 }
