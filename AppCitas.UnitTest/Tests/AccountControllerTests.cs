@@ -52,9 +52,8 @@ namespace AppCitas.UnitTest.Tests
             Assert.Equal(Enum.Parse<HttpStatusCode>(statusCode, true), httpResponse.StatusCode);
             Assert.Equal(statusCode, httpResponse.StatusCode.ToString());
         }
-
         [Theory]
-        [InlineData("OK", "bob", "Bob", "male", "1985-01-23", "London", "Uk", "Pa$$w0rd")]
+        [InlineData("OK", "hiram572000ef", "Hiramef", "male", "2000-07-05", "Mx", "Mx", "Pa$$w0rd")]
         public async Task Register_ReturnOk(string statusCode, string username, string knownAs, string gender, DateTime dateOfBirth, string city, string country, string password)
         {
             // Arrange

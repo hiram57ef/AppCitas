@@ -1,5 +1,6 @@
 ﻿using AppCitas;
 using AppCitas.Service;
+using AppCitas.UnitTests;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,7 +27,7 @@ namespace AppCitas.UnitTest.Helpers
         private TestHelper()
         {
             
-            Client = new UnitTests.APIWebApplicationFactory<Startup>().CreateDefaultClient();
+            Client = new APIWebApplicationFactory<Startup>().CreateDefaultClient();
             
         }
     }

@@ -66,24 +66,7 @@ namespace AppCitas.UnitTest.Tests
             Assert.Equal(statusCode, httpResponse.StatusCode.ToString());
         }
 
-        [Theory]
-        [InlineData("OK", "lisa", "Pa$$w0rd", "paco")]
-        public async Task AddLike_OK(string statusCode, string username, string password, string userLiked)
-        {
-            // Arrange
-            var user = await LoginHelper.LoginUser(username, password);
-            _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", user.Token);
-
-
-            requestUri = $"{apiRoute}/" + userLiked;
-
-            // Act
-            httpResponse = await _client.PostAsync(requestUri, httpContent);
-            _client.DefaultRequestHeaders.Authorization = null;
-            // Assert
-            Assert.Equal(Enum.Parse<HttpStatusCode>(statusCode, true), httpResponse.StatusCode);
-            Assert.Equal(statusCode, httpResponse.StatusCode.ToString());
-        }
+        
 
         [Theory]
         [InlineData("BadRequest", "lisa", "Pa$$w0rd", "todd")]
