@@ -3,10 +3,12 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace AppCitas.Service.Data.Migrations
+namespace API.Data.Migrations
 {
+    /// <inheritdoc />
     public partial class MessageEntityAdded : Migration
     {
+        /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
@@ -53,6 +55,7 @@ namespace AppCitas.Service.Data.Migrations
                 column: "SenderId");
         }
 
+        /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
